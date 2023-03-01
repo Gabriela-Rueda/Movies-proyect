@@ -1,4 +1,4 @@
-const Users = require('../models/users.models')
+const Users = require('../models/usersModels')
 const uuid = require('uuid')
 const { hashPassword } = require('../utils/crypto')
 

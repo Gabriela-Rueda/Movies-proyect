@@ -6,7 +6,7 @@ const initModels = require('./models/initModels')
 const config= require('../config').api
 const userRouter = require('./users/users.router')
 const authRouter = require('./auth/auth.router')
-
+const passportJwt= require('./middlewares/auth.middleware')
 const app = express()
 
 app.use(express.json())

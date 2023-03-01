@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config()// este comando nos ayuda a poder utilizar las variables de entorno que estan en otro arcivho
 const configs = {
     api: {
         port: process.env.PORT || 9000,
@@ -14,7 +14,7 @@ const configs = {
             port: 5432,
             username: 'postgres',
             password: 'root',
-            database: 'chat-db',
+            database: 'academ-movie',
             define: {
                 timestamps: true, //? Nos obliga a que todas las tablas tengan la propiedad createdAt y upadtedAt
                 underscored: true,

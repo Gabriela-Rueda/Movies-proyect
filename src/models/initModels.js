@@ -1,4 +1,4 @@
-const Users = require("./users.models")
+const Users = require("./usersModels")
 
 const initModels = () => {
     
