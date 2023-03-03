@@ -35,7 +35,7 @@ const Users = db.define("users", {
   },
   role:{
     type: DataTypes.STRING,
-    defaultValue:normal
+    defaultValue:'normal'
   },
   isActive: {
     type: DataTypes.BOOLEAN,

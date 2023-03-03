@@ -7,6 +7,9 @@ const config= require('../config').api
 const userRouter = require('./users/users.router')
 const authRouter = require('./auth/auth.router')
 const passportJwt= require('./middlewares/auth.middleware')
+const upload = require('./utils/multer')
+const moviesRouter = require('./movies/movies.router')
+const genreRouter = require('./genres/genres.router')
 const app = express()
 
 app.use(express.json())
@@ -32,17 +35,17 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/protected', 
-    passportJwt,
-    (req, res) => {
-        res.status(200).json({
-            message: `Hola ${req.user.firstName} este mensaje solo lo puedes ver si tienes sesion iniciada! :D`,
-        })
-    }
-)
+app.get('/query', (req, res) => {
+    res.status(200).json({
+        myQueryGenre: req.query.genre, 
+        queries: req.query
+    })
+})
 
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/movies', moviesRouter)
+app.use('/api/v1/genres', genreRouter)
 
 //? Esta debe ser la ultima ruta en mi app
 app.use('*', (req, res)=> {

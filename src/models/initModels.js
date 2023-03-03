@@ -1,4 +1,4 @@
-const Users = require("./users.models")
+const Users = require('./usersModels')
 const Movies = require('./movies.models')
 const Episodes = require("./episodes.models")
 const Genres = require("./genres.models")
